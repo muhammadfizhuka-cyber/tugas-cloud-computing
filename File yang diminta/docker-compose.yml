@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: web-container-101012330399
+    ports:
+      - "8080:8000"
+    environment:
+      - STUDENT_NIM=101012330399
+    depends_on:
+      - cache
+
+  cache:
+    image: redis:alpine
+    container_name: cache-container-101012330399
